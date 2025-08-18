@@ -17,7 +17,7 @@ export function Hero() {
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-6">
-            Hi, I'm <span className="text-primary">John Smith</span>
+            Hi, I'm <span className="text-primary">Alexandru Lupușoru</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
