@@ -7,14 +7,14 @@ export function About() {
       role: "Senior Software Engineer",
       period: "Feb 2024 - Present",
       description:
-        "Leading development of microservices architecture, mentoring junior developers, and implementing CI/CD pipelines.",
+        "Rebuild an entire solution on cloud infrastructure using microservices and a serverless approach. Develop an Identity and Access Management (IAM) module from scratch, implement OIDC and OAuth between Auth0 and Okta, define an ABAC evaluation system using OPA's rego expressions and ensure partial evaluaton capabilities.",
     },
     {
       company: "Levi9",
       role: "Software Developer Engineer",
       period: "Jul 2021 - Jan 2024",
       description:
-        "Built scalable web applications using React, Node.js, and AWS. Reduced page load times by 40%.",
+        "Develop and maintain AWS infrastructure using Serverless Framework, write clean code and think about implementations to serve customer needs.",
     },
     {
       company: "Technical University of Iasi 'Gh.Ascahi'",
@@ -40,8 +40,9 @@ export function About() {
               </p>
               <p className="text-lg text-muted-foreground mb-6">
                 When I'm not coding, you can find me contributing to open source
-                projects, reading about the latest tech trends, or exploring the
-                outdoors.
+                projects, reading about different things, exploring the outdoors
+                or playing around with electronics, soldering parts and having
+                fun.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">

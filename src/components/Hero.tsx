@@ -42,19 +42,19 @@ export function Hero() {
 
           <div className="flex justify-center space-x-6">
             <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              href="https://github.com/alexandervonwl"
+              className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
             >
-              <Github className="w-6 h-6" />
+              <Github className="w-5 h-5" />
             </a>
             <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              href="https://www.linkedin.com/in/alexandru-lupusoru/"
+              className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
             >
-              <Linkedin className="w-6 h-6" />
+              <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="mailto:lupusoru.alexandru@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail className="w-6 h-6" />
