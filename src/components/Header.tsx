@@ -14,7 +14,7 @@ export function Header() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-medium">AD</span>
             </div>
-            <span className="font-medium">Aex's Development</span>
+            <span className="font-medium">Alex's Development</span>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">

@@ -17,7 +17,7 @@ export function Hero() {
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl mb-6">
-            Hi, I'm <span className="text-primary">Alexandru Lupușoru</span>
+            Hi, I'm <span className="text-primary">Alex</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -34,6 +34,12 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="flex items-center gap-2"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/Engineer_Alexandru_Lupusoru.pdf"; // PDF file inside public/
+                link.download = "Engineer Alexandru Lupusoru.pdf";
+                link.click();
+              }}
             >
               <Download className="w-4 h-4" />
               Download Resume

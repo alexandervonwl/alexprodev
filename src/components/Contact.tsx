@@ -4,12 +4,37 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { sendEmail } from "../network/api";
 
 export function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [verified, setVerified] = useState(false);
+
+  const handleVerify = (token: string | null) => {
+    if (token) setVerified(true);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    console.log("Starting submit");
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
+    if (!verified) {
+      alert("Please verify you're human.");
+      return;
+    }
+
+    const formData = new FormData(e.currentTarget as HTMLFormElement);
+    const data = {
+      firstName: formData.get("firstName")?.valueOf() as string,
+      lastName: formData.get("lastName")?.valueOf() as string,
+      email: formData.get("email")?.valueOf() as string,
+      subject: formData.get("subject")?.valueOf() as string,
+      message: formData.get("message")?.valueOf() as string,
+    };
+    console.log("Form data:", data);
+
+    await sendEmail(data);
+    // proceed with form submission
   };
 
   return (
@@ -90,11 +115,11 @@ export function Contact() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Input id="firstName" name="firstName" placeholder="John" />
                   </div>
                   <div>
                     <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Input id="lastName" name="lastName" placeholder="Doe" />
                   </div>
                 </div>
 
@@ -102,6 +127,7 @@ export function Contact() {
                   <Label htmlFor="email">Email</Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     placeholder="john@example.com"
                   />
@@ -109,13 +135,18 @@ export function Contact() {
 
                 <div>
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Project Discussion" />
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Project Discussion"
+                  />
                 </div>
 
                 <div>
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell me about your project..."
                     className="min-h-[120px]"
                   />
@@ -124,6 +155,11 @@ export function Contact() {
                 <Button type="submit" className="w-full">
                   Send Message
                 </Button>
+
+                <ReCAPTCHA
+                  sitekey="6LdCorErAAAAANVPpaJjkJ2BDlpHJfpRV7EHuYik"
+                  onChange={handleVerify}
+                />
               </form>
             </Card>
           </div>
