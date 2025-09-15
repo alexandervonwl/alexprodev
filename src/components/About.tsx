@@ -45,13 +45,13 @@ export function About() {
                 fun.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                <span className="px-3 py-1 text-primary rounded-full bg-gray-200 text-sm">
                   Problem Solver
                 </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                <span className="px-3 py-1 text-primary rounded-full bg-gray-200 text-sm">
                   Team Player
                 </span>
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                <span className="px-3 py-1 text-primary rounded-full bg-gray-200 text-sm">
                   Lifelong Learner
                 </span>
               </div>
