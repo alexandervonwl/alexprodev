@@ -11,7 +11,7 @@ export const sendEmail = async (data: {
   let base =
     process.env.NODE_ENV === "development"
       ? "http://localhost:5000"
-      : "http://api.alexprodev.com";
+      : "https://api.alexprodev.com";
 
-  return axios.post(base + `/send`, data);
+  return axios.post(base + `/index.php`, data);
 };
